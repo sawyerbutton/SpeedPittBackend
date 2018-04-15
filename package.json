@@ -17,6 +17,7 @@
     "@nestjs/common": "^4.5.9",
     "@nestjs/core": "^4.5.10",
     "@nestjs/microservices": "^4.5.8",
+    "@nestjs/swagger": "^1.2.2",
     "@nestjs/testing": "^4.5.5",
     "@nestjs/typeorm": "^2.0.0",
     "@nestjs/websockets": "^4.5.8",
@@ -24,6 +25,7 @@
     "mysql": "^2.15.0",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.5.6",
+    "swagger": "^0.7.5",
     "typeorm": "^0.1.20",
     "typescript": "^2.6.2"
   },

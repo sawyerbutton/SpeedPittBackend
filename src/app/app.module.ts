@@ -1,8 +1,8 @@
 import { Module, NestModule } from '@nestjs/common';
-import { UsersModule } from './Users/modules/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { QuestionnaireModule } from './Questionnaire/questionnaire.module';
 
 @Module({
-  modules: [UsersModule]
+  modules: [QuestionnaireModule]
 })
 export class ApplicationModule { }

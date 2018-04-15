@@ -11,7 +11,7 @@ export const databaseProviders = [
       port: 27017,
       database: 'speed',
       entities: [
-        __dirname + '/Users/*.entity{.ts,.js}'
+        __dirname +'/../**/*.entity{.ts,.js}'
       ]
     })
   }

@@ -1,10 +1,10 @@
+
 'use strict';
 
 import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
-export class Users {
-  //主鍵，SQL Server識別種子
+export class QuestionnaireEntity {
   @ObjectIdColumn()
   id: number;
 
