@@ -3,7 +3,8 @@ export interface ITest {
   readonly download:number;
   readonly upload:number;
   readonly ip:string;
-  readonly lat:string;
-  readonly lon:string;
+  readonly lat:number;
+  readonly lon:number;
   readonly isp:string;
+  // readonly date:string;
 }

@@ -15,12 +15,15 @@ export class TestEntity{
   ip:string;
 
   @Column()
-  lat:string;
+  lat:number;
 
   @Column()
-  lon:string;
+  lon:number;
 
   @Column()
   isp:string;
+
+  // @Column()
+  // date:string;
 
 }

@@ -20,13 +20,18 @@ export class CreateTestDto{
 
   @ApiModelProperty()
   @IsString()
-  lat:string;
+  lat:number;
 
   @ApiModelProperty()
   @IsString()
-  lon:string;
+    lon:number;
 
   @ApiModelProperty()
   @IsString()
   isp:string;
+
+  // @ApiModelProperty()
+  // @IsString()
+  // date:string;
+
 }

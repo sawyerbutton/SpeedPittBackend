@@ -4,19 +4,18 @@ import { TestEntity} from './test.entity';
 import {ITest,ITestService} from './Interfaces/index';
 
 
+
 @Component()
 export class TestService implements ITestService{
 
   constructor(
     @Inject('TestRepository') private readonly testRepository: Repository<TestEntity>,
-    //private speedTest = require('speedtest-net'),
-    // private test = speedTest({maxTime:5000})
   ){}
 
   //CRUD
   public async getAllInfo():Promise<Array<TestEntity>>{
-    console.log('inject test');
-    await this.testSpeed();
+    // const data = await this.speedTestService.getSpeedInfo();
+    // console.log(data);
     return await this.testRepository.find();
   }
 
@@ -25,7 +24,7 @@ export class TestService implements ITestService{
   }
 
   public async addInfo(test:ITest):Promise<TestEntity>{
-    return await this.testRepository.save(test);
+    return await this.testRepository.save(this.speedData);
   }
 
   public async delete(id:number):Promise<string>{
@@ -37,18 +36,24 @@ export class TestService implements ITestService{
     }
   }
   //speed test
-  // public async getInternetSpeed():Promise<ITest>{
-  //   const msg = await
-  // }
+  public speedData: ITest;
 
-  public testSpeed(){
-    this.test.on('data',data=>{
-      console.dir(data);
-    })
+  public async logData(data){
+    const id = null;
+    const {download,upload} = data.speeds;
+    const {ip, lat, lon, isp} = data.client;
+    // const date = Date.now().toString();
+    const msg:ITest = {id,download, upload,ip,lat,lon,isp};
+    //const logData =await this.getLogData(data);
+    this.speedData = msg;
+    console.log(this.speedData);
   }
 
-  private speedTest = require('speedtest-net');
-  private test = this.speedTest({maxTime: 5000});
+  public async addSpeedData(){
+    const speedTest = require('speedtest-net');
+    await speedTest({maxTime: 5000})
+      .on('data',this.logData)
+  }
 
 }
 
