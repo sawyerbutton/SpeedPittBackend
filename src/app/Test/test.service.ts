@@ -14,8 +14,6 @@ export class TestService implements ITestService{
 
   //CRUD
   public async getAllInfo():Promise<Array<TestEntity>>{
-    // const data = await this.speedTestService.getSpeedInfo();
-    // console.log(data);
     return await this.testRepository.find();
   }
 
@@ -24,7 +22,7 @@ export class TestService implements ITestService{
   }
 
   public async addInfo(test:ITest):Promise<TestEntity>{
-    return await this.testRepository.save(this.speedData);
+    return await this.testRepository.save(test);
   }
 
   public async delete(id:number):Promise<string>{
@@ -34,25 +32,6 @@ export class TestService implements ITestService{
     }else {
       return 'delete fail';
     }
-  }
-  //speed test
-  public speedData: ITest;
-
-  public async logData(data){
-    const id = null;
-    const {download,upload} = data.speeds;
-    const {ip, lat, lon, isp} = data.client;
-    // const date = Date.now().toString();
-    const msg:ITest = {id,download, upload,ip,lat,lon,isp};
-    //const logData =await this.getLogData(data);
-    this.speedData = msg;
-    console.log(this.speedData);
-  }
-
-  public async addSpeedData(){
-    const speedTest = require('speedtest-net');
-    await speedTest({maxTime: 5000})
-      .on('data',this.logData)
   }
 
 }

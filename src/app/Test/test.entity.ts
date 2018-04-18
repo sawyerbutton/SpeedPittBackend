@@ -1,4 +1,4 @@
-import { Entity, Column, ObjectIdColumn } from 'typeorm';
+import { Entity, Column, ObjectIdColumn,CreateDateColumn } from 'typeorm';
 
 @Entity()
 export class TestEntity{
@@ -23,7 +23,7 @@ export class TestEntity{
   @Column()
   isp:string;
 
-  // @Column()
-  // date:string;
+  // @CreateDateColumn({ name: 'created_at', nullable: false })
+  // createdat: Date;
 
 }
