@@ -8,14 +8,11 @@ export class QuestionnaireEntity {
   @ObjectIdColumn()
   id: number;
 
-  @Column({ length: 50 })
-  name: string;
-
   @Column()
   address1: string;
 
   @Column()
-  address2: string;
+  numberHousehold:number;
 
   @Column()
   city: string;
@@ -25,4 +22,7 @@ export class QuestionnaireEntity {
 
   @Column()
   zipcode: number;
+
+  @Column()
+  privateLocation:string;
 }

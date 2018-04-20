@@ -7,10 +7,6 @@ export class CreateQuestionnaireDto{
   readonly id: number;
 
   @ApiModelProperty()
-  @IsString()
-  readonly name: string;
-
-  @ApiModelProperty()
   @IsInt()
   readonly zipcode: number;
 
@@ -20,7 +16,7 @@ export class CreateQuestionnaireDto{
 
   @ApiModelProperty()
   @IsString()
-  readonly address2: string;
+  readonly numberHousehold: number;
 
   @ApiModelProperty()
   @IsString()
@@ -29,4 +25,7 @@ export class CreateQuestionnaireDto{
   @ApiModelProperty()
   @IsString()
   readonly state: string;
+
+  @ApiModelProperty()
+  readonly privateLocation: any;
 }
