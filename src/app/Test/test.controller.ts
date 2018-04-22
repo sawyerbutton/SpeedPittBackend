@@ -1,6 +1,5 @@
 import { Controller, Get, Patch, Post, Param, Body, Delete, UseFilters, Req } from '@nestjs/common';
 import {TestService} from './test.service';
-import { async } from 'rxjs/scheduler/async';
 
 @Controller('test')
 export class TestController{
@@ -15,10 +14,8 @@ export class TestController{
   }
 
   @Post()
-  public async addInfo(@Req() req){
-    console.log("coming to controller awaiting for data");
-    console.log(req.data);
-    const msg = this.testService.addInfo(req.data);
+  public async addInfo(@Body() data){
+    const msg = this.testService.addInfo(data);
     return msg;
   }
 }
