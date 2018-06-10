@@ -28,4 +28,11 @@ export class CreateQuestionnaireDto{
 
   @ApiModelProperty()
   readonly privateLocation: any;
+
+  @ApiModelProperty()
+  @IsString()
+  readonly reasonNoInternet:string;
+
+  @ApiModelProperty()
+  readonly computerDevice:boolean;
 }

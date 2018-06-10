@@ -25,4 +25,10 @@ export class QuestionnaireEntity {
 
   @Column()
   privateLocation:string;
+
+  @Column()
+  reasonNoInternet:string;
+
+  @Column()
+  computerDevice:boolean;
 }

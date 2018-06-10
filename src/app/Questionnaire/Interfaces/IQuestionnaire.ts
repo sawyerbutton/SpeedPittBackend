@@ -6,4 +6,6 @@ export interface IQuestionnaire {
   readonly city: string;
   readonly zipcode: number;
   readonly privateLocation:any;
+  readonly reasonNoInternet:string;
+  readonly computerDevice:boolean;
 }
